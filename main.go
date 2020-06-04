@@ -13,13 +13,16 @@ func init() {
 }
 
 func main() {
+	http.HandleFunc("/favicon.ico", faviconHandler)
 	http.HandleFunc("/", index)
 	http.HandleFunc("/about", about)
 	http.HandleFunc("/contact", contact)
 	http.HandleFunc("/menus", menus)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
-	http.Handle("/favicon.ico", http.NotFoundHandler())
 	http.ListenAndServe(":80", nil)
+}
+func faviconHandler(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "favicon.ico")
 }
 
 func index(w http.ResponseWriter, _ *http.Request) {
