@@ -1,0 +1,74 @@
+$teal: #3B8080;
+$tealSeeThru: rgba($teal, 0.5);
+$grey: #383838;
+
+$tablet: 768px;
+$monitor: 1024px;
+
+*
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+
+body
+    background-color: $grey
+    font-family: sans-serif
+.nav-toggle
+    z-index: 2
+    position: fixed
+    padding: 10px
+
+.nav-overlay
+    z-index: 1
+    height: 0%
+    width: 100%
+    position: fixed
+    top: 0
+    left: 0
+    overflow-x: hidden
+    overflow-y: hidden
+    background-color: $tealSeeThru
+    transition: 0.5s;
+
+.nav-container    
+    padding: 5px 20px
+
+.item 
+    font-size: 16px
+    padding: 15px 5px
+    white-space: nowrap
+a 
+    color: white
+    text-decoration: none
+
+a:hover 
+    text-decoration: underline
+
+//Mobile
+@media all and ( max-width: $tablet - 1px)
+    .nav-container
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        align-items: center
+    .item
+        width: 100%
+        text-align: center
+        order: 1
+    .logo
+        width: 100%
+        text-align: center
+        order: 0
+//Tablet
+@media all and ( min-width:  $tablet) and ( max-width: $monitor - 1px)
+     .nav-container
+        display: flex
+        .item
+            width: 50%
+//Monitor
+@media all and ( min-width:  $monitor)
+     .nav-container
+        display: flex
+        .item
+            width: 25%
+    

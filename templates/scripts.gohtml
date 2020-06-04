@@ -1,0 +1,22 @@
+{{define "scripts"}}
+<script>
+  function toggle(x) {
+    if(x.classList.contains("fa-bars")){
+      x.classList.remove("fa-bars");
+      x.classList.add("fa-times");
+      openNav();
+    }else{
+      x.classList.add("fa-bars");
+      x.classList.remove("fa-times");
+      closeNav();
+    }
+  }
+  function openNav() {
+    document.getElementById("topNav").style.height = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("topNav").style.height = "0%";
+  }
+</script>  
+{{end}}
