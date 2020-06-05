@@ -47,6 +47,12 @@ a:hover {
   color: white;
 }
 
+.logo:hover {
+  fill: #3B8080;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 @media all and (max-width: 767px) {
   .nav-overlay {
     z-index: 1;
